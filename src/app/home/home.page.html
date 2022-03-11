@@ -1,20 +1,37 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+
+  <ion-header [translucent]="true">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title>
+        <h1 style="text-align: center;">Geolocalización</h1>
+      </ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="contenido">
+
+    <table>
+      <tr class="bglightgrey">
+        <th></th>
+        <th class="text-center">Promesa</th>
+        <th class="text-center">Observable</th>
+      </tr>
+      <tr>
+        <th class="bglightgrey text-center">Latitud</th>
+        <th class="text-center">{{latPro}}</th>
+        <th class="text-center">{{latObs}}</th>
+      </tr>
+      <tr>
+        <th class="bglightgrey text-center">Longitud</th>
+        <th class="text-center">{{lonPro}}</th>
+        <th class="text-center">{{lonObs}}</th>
+      </tr>
+    </table>
+
+    <ion-button (click)="gpsPromesa()" expand="block">Geolocalizador (Promesa)</ion-button>
+    <ion-button (click)="gpsObservable()" expand="block">Geolocalizador (Observable)</ion-button>
+    <ion-button color="warning" (click)="reset()" expand="block">Resetar localizaciones</ion-button>
+    
   </div>
+
 </ion-content>
