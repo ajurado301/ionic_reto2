@@ -17,20 +17,20 @@ export class HomePage {
     this.reset();
   }
 
-  public gpsPromesa(){
+  public gpsPromesa() {
     this.geolocation.getCurrentPosition()
-    .then((resp)=>{
-      this.latPro = resp.coords.latitude;
-      this.lonPro = resp.coords.longitude;
-    })
-    .catch((error)=> {
-      console.log("Error al geolocalizar con promesa", error);
-    })
+      .then((resp) => {
+        this.latPro = resp.coords.latitude;
+        this.lonPro = resp.coords.longitude;
+      })
+      .catch((error) => {
+        console.log("Error al geolocalizar con promesa", error);
+      })
   }
 
-  public gpsObservable(){
+  public gpsObservable() {
     let watch = this.geolocation.watchPosition();
-    watch.subscribe((resp: any)=>{
+    watch.subscribe((resp: any) => {
       this.latObs = resp.coords.latitude;
       this.lonObs = resp.coords.longitude;
     }, (error) => {
